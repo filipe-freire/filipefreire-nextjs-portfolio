@@ -33,8 +33,8 @@ const Navbar = () => {
             <Link href="/">
               <a onClick={handleClick}>Home</a>
             </Link>
-            <Link href="/blog">
-              <a onClick={handleClick}>Blog</a>
+            <Link href="/projects">
+              <a onClick={handleClick}>Projects</a>
             </Link>
             <Link href="/about">
               <a onClick={handleClick}>About</a>
