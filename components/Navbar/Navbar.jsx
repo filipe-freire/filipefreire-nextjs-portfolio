@@ -64,9 +64,7 @@ const Navbar = () => {
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/contact" activeClassName="active">
-                <a className={`${styles.navLink} clrTransition`}>Contact</a>
-              </ActiveLink>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

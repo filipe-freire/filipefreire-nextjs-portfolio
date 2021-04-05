@@ -5,7 +5,7 @@
   top: 0;
   z-index: 1;
   background-color: $clr-bg-primary;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   box-shadow: $clr-nav-shadow 0 -2px 5px 4px;
 
   .container {
@@ -31,10 +31,11 @@
 
       ul {
         display: flex;
+        align-items: center;
         list-style-type: none;
         padding: 0;
 
-        li {
+        li:not(:last-child) {
           transition: all 0.2s ease-out;
 
           &:hover {
@@ -43,6 +44,28 @@
 
           & + li {
             margin-left: 1rem;
+          }
+        }
+
+        li:last-child {
+          color: #a3ffff;
+          padding: 0.4rem 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 0.2ch;
+          font-size: 0.9rem;
+          border: 2px solid #a3ffff;
+          cursor: pointer;
+          transition: all 0.2s ease-out;
+
+          &:hover {
+            background-color: #a3ffff;
+            color: #1e1e1e;
+          }
+
+          a {
+            &:hover {
+              color: #1e1e1e;
+            }
           }
         }
       }
