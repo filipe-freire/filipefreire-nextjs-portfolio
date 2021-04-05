@@ -1,6 +1,25 @@
 .flexContainer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 750px;
+
+  .title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .content {
+    min-width: 150px;
+
+    .paragraph {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: justify;
+      margin: 1.2rem auto 1.8rem;
+    }
+  }
 
   .btn {
     display: block;
@@ -26,6 +45,22 @@
   }
 
   .notFoundImage {
-    max-width: 400px;
+    margin-left: 2rem;
+    max-width: 350px;
+    max-height: 340px;
+    filter: drop-shadow(#1e1e1e 0px 0px 2px);
+  }
+  @media (max-width: 710px) {
+    flex-direction: column;
+
+    .content {
+      margin-top: 1rem;
+      order: 2;
+    }
+
+    .notFoundImage {
+      margin-left: 0;
+      order: 1;
+    }
   }
 }
