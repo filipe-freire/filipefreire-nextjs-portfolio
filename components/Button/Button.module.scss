@@ -1,0 +1,22 @@
+.btn {
+  display: block;
+  max-width: max-content;
+  padding: 0.6rem 1.8em;
+  margin: 20px auto;
+  background-color: #3c6c8d;
+  border-radius: 4px;
+  color: #f8f0f0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.35ch;
+  font-weight: 500;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffdc5d;
+    color: #1e1e1e;
+    box-shadow: 0 2px 3px 1px #1e1e1e;
+    transform: scale(1.02);
+  }
+}
