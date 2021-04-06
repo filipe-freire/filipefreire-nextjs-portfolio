@@ -48,22 +48,19 @@
         }
 
         li:last-child {
-          color: #a3ffff;
-          padding: 0.4rem 0.9rem;
-          text-transform: uppercase;
-          letter-spacing: 0.2ch;
-          font-size: 0.9rem;
-          border: 2px solid #a3ffff;
-          cursor: pointer;
-          transition: all 0.2s ease-out;
-
-          &:hover {
-            background-color: #a3ffff;
-            color: #1e1e1e;
-          }
-
           a {
-            &:hover {
+            color: #a3ffff;
+            padding: 0.4rem 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2ch;
+            font-size: 0.9rem;
+            border: 2px solid #a3ffff;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+
+            &:hover,
+            &:focus {
+              background-color: #a3ffff;
               color: #1e1e1e;
             }
           }
@@ -93,8 +90,6 @@
         }
 
         &:hover {
-          // color: yellow;
-          // font-size: 1.3rem;
           &::after {
             width: 100%;
             opacity: 1;
