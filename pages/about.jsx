@@ -2,19 +2,10 @@ import HeadComp from "../components/HeadComp";
 import { motion } from "framer-motion";
 import styles from "../styles/About.module.scss";
 
-const about = () => {
+const About = ({ url }) => {
   return (
     <>
-      <HeadComp title="Contact">
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-          integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
-          crossorigin="anonymous"
-        />
-      </HeadComp>
-
-      {/* <motion.h1>another hey!</motion.h1> */}
+      <HeadComp title="Contact"></HeadComp>
       <motion.div
         initial="hidden"
         animate="visible"
@@ -33,20 +24,30 @@ const about = () => {
           },
         }}
       >
-        <div className={styles.contactLayout}>
-          <h1 className={styles.title}>
-            About{" "}
-            <span role="img" aria-label="">
-              🗒️
-            </span>
-          </h1>
-          <p className={styles.paragraph}>
-            I'm usually active in the following social media platforms ⬇️
-          </p>
+        <div className={styles.aboutContainer}>
+          <img
+            className={styles.profileImg}
+            src={url}
+            alt="Filipe Freire's profile"
+          />
+          <p className={`${styles.paragraph} ${styles.name}`}>Filipe Freire</p>
+          <p className={styles.paragraph}>Full Stack Web Developer</p>
+
+          <p className={styles.paragraph}>Currently in Goteborg, Sweden 🇸🇪</p>
         </div>
       </motion.div>
     </>
   );
 };
 
-export default about;
+export async function getStaticProps() {
+  const url = "https://avatars.githubusercontent.com/u/45498579?v=4";
+
+  return {
+    props: {
+      url,
+    },
+  };
+}
+
+export default About;

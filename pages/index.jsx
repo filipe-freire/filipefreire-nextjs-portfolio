@@ -4,13 +4,10 @@ import Button from "../components/Button/Button";
 
 import styles from "../styles/Homepage.module.scss";
 
-export default function Home({ url }) {
+export default function Home() {
   return (
     <>
       <HeadComp title="Home"></HeadComp>
-
-      {/* <motion.h1>hey!</motion.h1> */}
-
       <motion.div
         className={styles.intro}
         initial="hidden"
@@ -30,17 +27,6 @@ export default function Home({ url }) {
           },
         }}
       >
-        <div className={styles.aboutContainer}>
-          <img
-            className={styles.profileImg}
-            src={url}
-            alt="Filipe Freire's profile"
-          />
-          <p className={`${styles.paragraph} ${styles.name}`}>Filipe Freire</p>
-          <p className={styles.paragraph}>Full Stack Web Developer</p>
-
-          <p className={styles.paragraph}>Currently in Goteborg, Sweden 🇸🇪</p>
-        </div>
         <motion.div
           className={styles.container}
           initial="hidden"
@@ -72,20 +58,9 @@ export default function Home({ url }) {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
             veniam necessitatibus rem nemo cupiditate quidem.
           </p>
-
           <Button href="/contact" text="get in touch!" />
         </motion.div>
       </motion.div>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const url = "https://avatars.githubusercontent.com/u/45498579?v=4";
-
-  return {
-    props: {
-      url,
-    },
-  };
 }

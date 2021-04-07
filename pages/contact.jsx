@@ -13,8 +13,6 @@ const Contact = () => {
           crossorigin="anonymous"
         />
       </HeadComp>
-
-      {/* <motion.h1>another hey!</motion.h1> */}
       <motion.div
         initial="hidden"
         animate="visible"
