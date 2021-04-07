@@ -24,6 +24,20 @@
     .paragraph {
       margin-top: 1rem;
       text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #d9d9d9;
+
+      &.name {
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: 0.15ch;
+      }
+
+      &:last-child {
+        font-weight: 300;
+        color: #9af2e2;
+      }
     }
   }
 

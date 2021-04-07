@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeadComp from "../components/HeadComp";
 import { motion } from "framer-motion";
 import Button from "../components/Button/Button";
@@ -9,18 +8,39 @@ export default function Home({ url }) {
   return (
     <>
       <HeadComp title="Home"></HeadComp>
-      <div className={styles.intro}>
+
+      {/* <motion.h1>hey!</motion.h1> */}
+
+      <motion.div
+        className={styles.intro}
+        initial="hidden"
+        animate="visible"
+        exit={{ opacity: 0 }}
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.2,
+            },
+          },
+        }}
+      >
         <div className={styles.aboutContainer}>
           <img
             className={styles.profileImg}
             src={url}
             alt="Filipe Freire's profile"
           />
+          <p className={`${styles.paragraph} ${styles.name}`}>Filipe Freire</p>
           <p className={styles.paragraph}>Full Stack Web Developer</p>
 
           <p className={styles.paragraph}>Currently in Goteborg, Sweden 🇸🇪</p>
         </div>
-
         <motion.div
           className={styles.container}
           initial="hidden"
@@ -55,7 +75,7 @@ export default function Home({ url }) {
 
           <Button href="/contact" text="get in touch!" />
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 }
