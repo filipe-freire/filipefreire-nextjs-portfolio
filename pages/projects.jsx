@@ -9,7 +9,7 @@ const projectsArr = [
     description: `Built using JavaScript Object Oriented Programming architecture
 and HTML canvas.`,
     link: "https://javascriptin.netlify.app/",
-    image: "assets/img/javaScriptin-gif-1.gif",
+    image: "assets/img/javaScriptin-gif-1.gif"
   },
   {
     title: "BandTracker",
@@ -17,21 +17,21 @@ and HTML canvas.`,
     check whether they're performing and where. Built using NodeJS,
     ExpressJS, Handlebars and API integrations.`,
     link: "https://bandtrackerapp.herokuapp.com/",
-    image: "assets/img/bandtracker-demo.gif",
+    image: "assets/img/bandtracker-demo.gif"
   },
   {
     title: "Vanilla Jobs",
     description: `A Web Develompent job search Single Page Application (SPA) using
     React and REST API. Built mobile first using SCSS.`,
     link: "https://vanilla-jobs.netlify.app/",
-    image: "assets/img/vanilla-jobs-demo.gif",
+    image: "assets/img/vanilla-jobs-demo.gif"
   },
   {
     title: "IronHack Class Timer",
     description: `A timer built with HTML | CSS | JavaScript in order to properly time breaks during Ironhack Remote Bootcamp's!`,
     link: "https://filipe-freire.github.io/ironhack-class-timer/",
-    image: "assets/img/ih-timer.gif",
-  },
+    image: "assets/img/ih-timer.gif"
+  }
 ];
 
 const Projects = () => {
@@ -39,68 +39,55 @@ const Projects = () => {
   const [cardPosition, setcardPosition] = useState(300);
 
   function handleClick(e) {
-    if (e.target.id === "btnLeft") {
+    if (e.currentTarget.id === "btnLeft") {
       setcardPosition(-300);
       return !count ? setCount(projectsArr.length - 1) : setCount(count - 1);
     } else {
       setcardPosition(300);
-      return count === projectsArr.length - 1
-        ? setCount(0)
-        : setCount(count + 1);
+      return count === projectsArr.length - 1 ? setCount(0) : setCount(count + 1);
     }
   }
 
   return (
     <>
-      <HeadComp title="Contact"></HeadComp>
+      <HeadComp title='Contact'></HeadComp>
       <motion.div
         className={styles.container}
-        initial="hidden"
-        animate="visible"
+        initial='hidden'
+        animate='visible'
         exit={{ opacity: 0 }}
         variants={{
           hidden: {
             scale: 0.8,
-            opacity: 0,
+            opacity: 0
           },
           visible: {
             scale: 1,
             opacity: 1,
             transition: {
-              delay: 0.2,
-            },
-          },
+              delay: 0.2
+            }
+          }
         }}
       >
         <div className={styles.contactLayout}>
           <h1 className={styles.title}>
             My Projects{" "}
-            <span role="img" aria-label="">
+            <span role='img' aria-label=''>
               💻
             </span>
           </h1>
-          {/* <p className={styles.paragraph}>
-            I'm usually active in the following social media platforms ⬇️
-          </p> */}
         </div>
         <div className={styles.flexContainer}>
-          <button
-            id="btnLeft"
-            onClick={(e) => handleClick(e)}
-            className={styles.btn}
-          >
-            {/* <div className={`${styles.arrowTop}`}></div>
-            <div className={`${styles.arrowBottom}`}></div> */}
-            <img src="/assets/img/arrow.svg" alt="" />
+          <button id='btnLeft' onClick={e => handleClick(e)} className={styles.btn}>
+            <img src='/assets/img/arrow.svg' alt='' />
           </button>
           <button
-            id="btnRight"
-            onClick={(e) => handleClick(e)}
+            id='btnRight'
+            onClick={e => handleClick(e)}
             className={`${styles.btn} ${styles.right}`}
           >
-            <img src="/assets/img/arrow.svg" alt="" />
-            {/* <div className={`${styles.arrowTop}`}></div>
-            <div className={`${styles.arrowBottom}`}></div> */}
+            <img src='/assets/img/arrow.svg' alt='' />
           </button>
         </div>
         <AnimatePresence exitBeforeEnter>
@@ -112,25 +99,17 @@ const Projects = () => {
             exit={{
               opacity: 0,
               scale: 0.4,
-              transition: { duration: 0.2 },
+              transition: { duration: 0.2 }
             }}
           >
             <div>
               <div>
-                <h1 className={styles.projectTitle}>
-                  {projectsArr[count].title}
-                </h1>
-                <p className={styles.projectInfo}>
-                  {projectsArr[count].description}
-                </p>
+                <h1 className={styles.projectTitle}>{projectsArr[count].title}</h1>
+                <p className={styles.projectInfo}>{projectsArr[count].description}</p>
               </div>
-              <a
-                href={projectsArr[count].link}
-                className={styles.link}
-                target="_blank"
-              >
+              <a href={projectsArr[count].link} className={styles.link} target='_blank'>
                 <div className={styles.projectImg}>
-                  <img src={projectsArr[count].image} alt="" />
+                  <img src={projectsArr[count].image} alt='' />
                 </div>
               </a>
             </div>
