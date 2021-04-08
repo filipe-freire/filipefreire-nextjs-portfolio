@@ -4,6 +4,18 @@
   font-weight: 600;
 }
 
+.btn {
+  position: absolute;
+  top: 50%;
+  &.left {
+    left: 2rem;
+  }
+
+  &.right {
+    right: 2rem;
+  }
+}
+
 .projectCard {
   max-width: 1000px;
   margin: 0 auto;

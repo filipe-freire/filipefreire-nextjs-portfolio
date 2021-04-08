@@ -1,13 +1,50 @@
 import HeadComp from "../components/HeadComp";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../styles/Projects.module.scss";
+import { useState } from "react";
 
-const projects = () => {
+const images = [
+  "assets/img/JavaScripting.webp",
+  "assets/img/Bandtracker.webp",
+  "assets/img/Vanilla-Jobs.webp",
+];
+
+const projectsArr = [
+  {
+    title: "JavaScripting, The Game",
+    description: `Built using JavaScript Object Oriented Programming architecture
+and HTML canvas.`,
+  },
+  {
+    title: "BandTracker",
+    description: `Allows the user to search for his favorite bands/artists and
+check whether they're performing and where. Built using NodeJS,
+ExpressJS, Handlebars and API integrations.`,
+  },
+  {
+    title: "Vanilla Jobs",
+    description: `A Web Develompent job search Single Page Application (SPA) using
+React and REST API. Built mobile first using SCSS.`,
+  },
+];
+
+const Projects = () => {
+  const [count, setCount] = useState(0);
+  const [cardPosition, setcardPosition] = useState(300);
+
+  function handleClick(e) {
+    if (e.target.textContent === "⬅️") {
+      setcardPosition(-300);
+      return !count ? setCount(2) : setCount(count - 1);
+    } else {
+      setcardPosition(300);
+      return count === 2 ? setCount(0) : setCount(count + 1);
+    }
+  }
+
   return (
     <>
       <HeadComp title="Contact"></HeadComp>
-
-      {/* <motion.h1>another hey!</motion.h1> */}
       <motion.div
         className={styles.container}
         initial="hidden"
@@ -38,52 +75,48 @@ const projects = () => {
             I'm usually active in the following social media platforms ⬇️
           </p> */}
         </div>
-        <div className={styles.projectCard}>
-          <div>
+        <button
+          onClick={(e) => handleClick(e)}
+          className={`${styles.btn} ${styles.left}`}
+        >
+          ⬅️
+        </button>
+        <button
+          onClick={(e) => handleClick(e)}
+          className={`${styles.btn} ${styles.right}`}
+        >
+          ➡️
+        </button>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            className={styles.projectCard}
+            key={count}
+            initial={{ x: cardPosition, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{
+              opacity: 0,
+              scale: 0.4,
+              transition: { duration: 0.2 },
+            }}
+          >
             <div>
-              <h1 className={styles.projectTitle}>JavaScripting, The Game</h1>
-              <p className={styles.projectInfo}>
-                Built using JavaScript Object Oriented Programming architecture
-                and HTML canvas.
-              </p>
+              <div>
+                <h1 className={styles.projectTitle}>
+                  {projectsArr[count].title}
+                </h1>
+                <p className={styles.projectInfo}>
+                  {projectsArr[count].description}
+                </p>
+              </div>
+              <div className={styles.projectImg}>
+                <img src={images[count]} alt="" />
+              </div>
             </div>
-            <div className={styles.projectImg}>
-              <img src="/img/JavaScripting.webp" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className={styles.projectCard}>
-          <div>
-            <div>
-              <h1 className={styles.projectTitle}>BandTracker</h1>
-              <p className={styles.projectInfo}>
-                Allows the user to search for his favorite bands/artists and
-                check whether they're performing and where. Built using NodeJS,
-                ExpressJS, Handlebars and API integrations.
-              </p>
-            </div>
-            <div className={styles.projectImg}>
-              <img src="/img/Bandtracker.webp" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className={styles.projectCard}>
-          <div>
-            <div>
-              <h1 className={styles.projectTitle}>Vanilla Jobs</h1>
-              <p className={styles.projectInfo}>
-                A Web Develompent job search single page application (SPA) using
-                React and REST API. Built mobile first using SCSS.
-              </p>
-            </div>
-            <div className={styles.projectImg}>
-              <img src="/img/Vanilla-Jobs.webp" alt="" />
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
     </>
   );
 };
 
-export default projects;
+export default Projects;
