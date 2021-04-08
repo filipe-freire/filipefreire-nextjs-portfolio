@@ -5,14 +5,7 @@ import styles from "../styles/Projects.module.scss";
 const projects = () => {
   return (
     <>
-      <HeadComp title="Contact">
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-          integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
-          crossorigin="anonymous"
-        />
-      </HeadComp>
+      <HeadComp title="Contact"></HeadComp>
 
       {/* <motion.h1>another hey!</motion.h1> */}
       <motion.div
