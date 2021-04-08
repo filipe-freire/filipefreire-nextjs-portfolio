@@ -1,19 +1,7 @@
 .title {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: center;
   font-weight: 600;
-}
-
-.btn {
-  position: absolute;
-  top: 50%;
-  &.left {
-    left: 2rem;
-  }
-
-  &.right {
-    right: 2rem;
-  }
 }
 
 .projectCard {
@@ -32,9 +20,14 @@
     font-weight: 400;
   }
 
+  .link {
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+
   .projectImg {
     box-shadow: rgba(0, 0, 0, 0.507) 0px 20px 30px -10px;
-    max-width: 400px;
     margin: 3rem auto;
     outline: 3px groove rgb(44, 140, 143);
   }
@@ -43,4 +36,22 @@
 .container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto 3rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+
+  &.right {
+    rotate: 180deg;
+  }
 }

@@ -3,28 +3,34 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "../styles/Projects.module.scss";
 import { useState } from "react";
 
-const images = [
-  "assets/img/JavaScripting.webp",
-  "assets/img/Bandtracker.webp",
-  "assets/img/Vanilla-Jobs.webp",
-];
-
 const projectsArr = [
   {
     title: "JavaScripting, The Game",
     description: `Built using JavaScript Object Oriented Programming architecture
 and HTML canvas.`,
+    link: "https://javascriptin.netlify.app/",
+    image: "assets/img/javaScriptin-gif-1.gif",
   },
   {
     title: "BandTracker",
     description: `Allows the user to search for his favorite bands/artists and
-check whether they're performing and where. Built using NodeJS,
-ExpressJS, Handlebars and API integrations.`,
+    check whether they're performing and where. Built using NodeJS,
+    ExpressJS, Handlebars and API integrations.`,
+    link: "https://bandtrackerapp.herokuapp.com/",
+    image: "assets/img/bandtracker-demo.gif",
   },
   {
     title: "Vanilla Jobs",
     description: `A Web Develompent job search Single Page Application (SPA) using
-React and REST API. Built mobile first using SCSS.`,
+    React and REST API. Built mobile first using SCSS.`,
+    link: "https://vanilla-jobs.netlify.app/",
+    image: "assets/img/vanilla-jobs-demo.gif",
+  },
+  {
+    title: "IronHack Class Timer",
+    description: `A timer built with HTML | CSS | JavaScript in order to properly time breaks during Ironhack Remote Bootcamp's!`,
+    link: "https://filipe-freire.github.io/ironhack-class-timer/",
+    image: "assets/img/ih-timer.gif",
   },
 ];
 
@@ -33,12 +39,14 @@ const Projects = () => {
   const [cardPosition, setcardPosition] = useState(300);
 
   function handleClick(e) {
-    if (e.target.textContent === "⬅️") {
+    if (e.target.id === "btnLeft") {
       setcardPosition(-300);
-      return !count ? setCount(2) : setCount(count - 1);
+      return !count ? setCount(projectsArr.length - 1) : setCount(count - 1);
     } else {
       setcardPosition(300);
-      return count === 2 ? setCount(0) : setCount(count + 1);
+      return count === projectsArr.length - 1
+        ? setCount(0)
+        : setCount(count + 1);
     }
   }
 
@@ -75,18 +83,26 @@ const Projects = () => {
             I'm usually active in the following social media platforms ⬇️
           </p> */}
         </div>
-        <button
-          onClick={(e) => handleClick(e)}
-          className={`${styles.btn} ${styles.left}`}
-        >
-          ⬅️
-        </button>
-        <button
-          onClick={(e) => handleClick(e)}
-          className={`${styles.btn} ${styles.right}`}
-        >
-          ➡️
-        </button>
+        <div className={styles.flexContainer}>
+          <button
+            id="btnLeft"
+            onClick={(e) => handleClick(e)}
+            className={styles.btn}
+          >
+            {/* <div className={`${styles.arrowTop}`}></div>
+            <div className={`${styles.arrowBottom}`}></div> */}
+            <img src="/assets/img/arrow.svg" alt="" />
+          </button>
+          <button
+            id="btnRight"
+            onClick={(e) => handleClick(e)}
+            className={`${styles.btn} ${styles.right}`}
+          >
+            <img src="/assets/img/arrow.svg" alt="" />
+            {/* <div className={`${styles.arrowTop}`}></div>
+            <div className={`${styles.arrowBottom}`}></div> */}
+          </button>
+        </div>
         <AnimatePresence exitBeforeEnter>
           <motion.div
             className={styles.projectCard}
@@ -108,9 +124,15 @@ const Projects = () => {
                   {projectsArr[count].description}
                 </p>
               </div>
-              <div className={styles.projectImg}>
-                <img src={images[count]} alt="" />
-              </div>
+              <a
+                href={projectsArr[count].link}
+                className={styles.link}
+                target="_blank"
+              >
+                <div className={styles.projectImg}>
+                  <img src={projectsArr[count].image} alt="" />
+                </div>
+              </a>
             </div>
           </motion.div>
         </AnimatePresence>
