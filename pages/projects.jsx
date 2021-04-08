@@ -82,6 +82,30 @@ const Projects = () => {
           <button id='btnLeft' onClick={e => handleClick(e)} className={styles.btn}>
             <img src='/assets/img/arrow.svg' alt='' />
           </button>
+          <div
+            onClick={() => setCount(0)}
+            className={`${styles.projectNavBtn} ${count === 0 && styles.line}`}
+          >
+            🎱
+          </div>
+          <div
+            onClick={() => setCount(1)}
+            className={`${styles.projectNavBtn} ${count === 1 && styles.line}`}
+          >
+            🏀
+          </div>
+          <div
+            onClick={() => setCount(2)}
+            className={`${styles.projectNavBtn} ${count === 2 && styles.line}`}
+          >
+            🏐
+          </div>
+          <div
+            onClick={() => setCount(3)}
+            className={`${styles.projectNavBtn} ${count === 3 && styles.line}`}
+          >
+            ⚽
+          </div>
           <button
             id='btnRight'
             onClick={e => handleClick(e)}

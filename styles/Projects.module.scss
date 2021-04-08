@@ -44,12 +44,34 @@
   align-items: center;
   max-width: 400px;
   margin: 0 auto 3rem;
+
+  .projectNavBtn {
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    max-width: 45px;
+
+    &.line {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        color: white;
+        background: white;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+      }
+    }
+  }
 }
 
 .btn {
   background-color: transparent;
   border: none;
   width: 50px;
+  cursor: pointer;
 
   &.right {
     rotate: 180deg;
