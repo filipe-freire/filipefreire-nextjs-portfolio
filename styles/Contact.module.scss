@@ -20,36 +20,37 @@
     align-items: center;
     margin-top: 1em;
 
-    .socialListItemTwitter {
-      font-size: 0.5rem;
+    & > li {
+      font-size: 1.5rem;
       padding: 0.6rem 0.2rem 0.2rem;
-      color: #88d1ff;
+      transition: all 0.2s ease-out;
       &:hover {
-        color: #1da1f2;
+        transform: scale(1.2);
+      }
+    }
+
+    .socialListItemTwitter {
+      color: #1da1f2;
+      &:hover {
+        color: #88d1ff;
       }
     }
     .socialListItemGithub {
-      font-size: 0.5rem;
-      padding: 0.6rem 0.2rem 0.2rem;
-      color: #fad464de;
+      color: #f3ba1e;
       &:hover {
-        color: #f3ba1e;
-      }
-    }
-    .socialListItemInstagram {
-      font-size: 0.5rem;
-      padding: 0.6rem 0.2rem 0.2rem;
-      color: #df93b2;
-      &:hover {
-        color: #c33670;
+        color: #fad464de;
       }
     }
     .socialListItemLinkedIn {
-      font-size: 0.5rem;
-      padding: 0.6rem 0.2rem 0.2rem;
-      color: #51a8ff;
+      color: #3386da;
       &:hover {
-        color: #3386da;
+        color: #51a8ff;
+      }
+    }
+    .socialListItemInstagram {
+      color: #c33670;
+      &:hover {
+        color: #df93b2;
       }
     }
   }
