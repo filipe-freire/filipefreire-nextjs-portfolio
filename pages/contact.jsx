@@ -14,6 +14,7 @@ const Contact = () => {
         />
       </HeadComp>
       <motion.div
+        className={styles.contactLayout}
         initial='hidden'
         animate='visible'
         exit={{ opacity: 0 }}
@@ -31,66 +32,76 @@ const Contact = () => {
           }
         }}
       >
-        <div className={styles.contactLayout}>
-          <h1 className={styles.title}>
-            Reach out!{" "}
-            <span role='img' aria-label=''>
-              ✉️
-            </span>
-          </h1>
-          <p className={styles.paragraph}>
-            I'm usually active in the following social media platforms ⬇️
-          </p>
-          <ul className={styles.socialList}>
-            <li>
-              <motion.a
-                className={styles.socialListItemTwitter}
-                animate={{ scale: 2.8 }}
-                transition={{ duration: 0.5 }}
-                href='https://twitter.com/Filipe__Freire'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-twitter fa-2x' />
-              </motion.a>
-            </li>
-            <li>
-              <motion.a
-                animate={{ scale: 2.8 }}
-                transition={{ duration: 0.7 }}
-                className={styles.socialListItemGithub}
-                href='https://github.com/filipe-freire/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-github fa-2x' />
-              </motion.a>
-            </li>
-            <li>
-              <motion.a
-                animate={{ scale: 2.8 }}
-                transition={{ duration: 0.9 }}
-                className={styles.socialListItemLinkedIn}
-                href='https://linkedin.com/in/filiperpfreire/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-linkedin fa-2x' />
-              </motion.a>
-            </li>
-            <li>
-              <motion.a
-                animate={{ scale: 2.8 }}
-                transition={{ duration: 1.1 }}
-                className={styles.socialListItemInstagram}
-                href='https://www.instagram.com/filipe__freire/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <i className='fab fa-instagram fa-2x' />
-              </motion.a>
-            </li>
-          </ul>
+        <h1 className={styles.title}>
+          Reach out!{" "}
+          <span role='img' aria-label=''>
+            ✉️
+          </span>
+        </h1>
+        <div className={styles.flexContainer}>
+          <div className={styles.links}>
+            <p className={styles.paragraph}>Want to get in touch? You're in the right place!</p>
+            <p className={styles.paragraph}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel distinctio alias
+              eligendi sint hic quibusdam itaque velit quisquam quo quasi?
+            </p>
+            <p className={styles.paragraph}>
+              I'm usually active in the following social media platforms. ⬇️
+            </p>
+            <ul className={styles.socialList}>
+              <li>
+                <motion.a
+                  className={styles.socialListItemTwitter}
+                  animate={{ scale: 2.8 }}
+                  transition={{ duration: 0.5 }}
+                  href='https://twitter.com/Filipe__Freire'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <i className='fab fa-twitter fa-2x' />
+                </motion.a>
+              </li>
+              <li>
+                <motion.a
+                  animate={{ scale: 2.8 }}
+                  transition={{ duration: 0.7 }}
+                  className={styles.socialListItemGithub}
+                  href='https://github.com/filipe-freire/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <i className='fab fa-github fa-2x' />
+                </motion.a>
+              </li>
+              <li>
+                <motion.a
+                  animate={{ scale: 2.8 }}
+                  transition={{ duration: 0.9 }}
+                  className={styles.socialListItemLinkedIn}
+                  href='https://linkedin.com/in/filiperpfreire/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <i className='fab fa-linkedin fa-2x' />
+                </motion.a>
+              </li>
+              <li>
+                <motion.a
+                  animate={{ scale: 2.8 }}
+                  transition={{ duration: 1.1 }}
+                  className={styles.socialListItemInstagram}
+                  href='https://www.instagram.com/filipe__freire/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <i className='fab fa-instagram fa-2x' />
+                </motion.a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.messageImg}>
+            <img src='/assets/img/illustrations/Messaging.svg' alt='' />
+          </div>
         </div>
       </motion.div>
     </>
