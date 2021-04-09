@@ -36,14 +36,14 @@ and HTML canvas.`,
 
 const Projects = () => {
   const [count, setCount] = useState(0);
-  const [cardPosition, setcardPosition] = useState(300);
+  const [cardPosition, setcardPosition] = useState(250);
 
   function handleClick(e) {
     if (e.currentTarget.id === "btnLeft") {
-      setcardPosition(-300);
+      setcardPosition(-250);
       return !count ? setCount(projectsArr.length - 1) : setCount(count - 1);
     } else {
-      setcardPosition(300);
+      setcardPosition(250);
       return count === projectsArr.length - 1 ? setCount(0) : setCount(count + 1);
     }
   }
@@ -121,13 +121,14 @@ const Projects = () => {
             <div>
               <div>
                 <h1 className={styles.projectTitle}>{projectsArr[count].title}</h1>
-                <p className={styles.projectInfo}>{projectsArr[count].description}</p>
               </div>
               <a href={projectsArr[count].link} className={styles.link} target='_blank'>
                 <div className={styles.projectImg}>
                   <img src={projectsArr[count].image} alt='' />
                 </div>
               </a>
+              <h2>Summary</h2>
+              <p className={styles.projectInfo}>{projectsArr[count].description}</p>
             </div>
           </motion.div>
         </AnimatePresence>
