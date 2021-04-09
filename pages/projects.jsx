@@ -6,29 +6,38 @@ import { useState } from "react";
 const projectsArr = [
   {
     title: "JavaScripting, The Game",
-    description: `Built using JavaScript Object Oriented Programming architecture
-and HTML canvas.`,
+    description: [
+      `- Built using JavaScript Object Oriented Programming architecture and HTML canvas.`,
+      `- Developed during Ironhack's Full Stack Web Development 1st module project week.`,
+      `- Winner of the "Most Creative Game" award! 🏆`
+    ],
     link: "https://javascriptin.netlify.app/",
     image: "assets/img/javaScriptin-gif-1.gif"
   },
   {
     title: "BandTracker",
-    description: `Allows the user to search for his favorite bands/artists and
+    description: [
+      `- Allows the user to search for his favorite bands/artists and
     check whether they're performing and where. Built using NodeJS,
-    ExpressJS, Handlebars and API integrations.`,
+    ExpressJS, Handlebars and API integrations.`
+    ],
     link: "https://bandtrackerapp.herokuapp.com/",
     image: "assets/img/bandtracker-demo.gif"
   },
   {
     title: "Vanilla Jobs",
-    description: `A Web Develompent job search Single Page Application (SPA) using
-    React and REST API. Built mobile first using SCSS.`,
+    description: [
+      `- A Web Develompent job search Single Page Application (SPA) using
+    React and REST API. Built mobile first using SCSS.`
+    ],
     link: "https://vanilla-jobs.netlify.app/",
     image: "assets/img/vanilla-jobs-demo.gif"
   },
   {
     title: "IronHack Class Timer",
-    description: `A timer built with HTML | CSS | JavaScript in order to properly time breaks during Ironhack Remote Bootcamp's!`,
+    description: [
+      `- A timer built with HTML | CSS | JavaScript in order to properly time breaks during Ironhack Remote Bootcamp's!`
+    ],
     link: "https://filipe-freire.github.io/ironhack-class-timer/",
     image: "assets/img/ih-timer.gif"
   }
@@ -128,7 +137,11 @@ const Projects = () => {
                 </div>
               </a>
               <h2>Summary</h2>
-              <p className={styles.projectInfo}>{projectsArr[count].description}</p>
+              {projectsArr[count].description.map((p, i) => (
+                <p key={i} className={styles.projectInfo}>
+                  {p}
+                </p>
+              ))}
             </div>
           </motion.div>
         </AnimatePresence>
