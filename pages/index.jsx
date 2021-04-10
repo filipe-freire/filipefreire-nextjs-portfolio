@@ -145,17 +145,16 @@ export default function Home() {
         </div>
       </motion.div>
       <div className={styles.contactCta}>
-        <p className={styles.subtitle}>
-          Thank you for
-          <br /> visiting!
-        </p>
+        <p className={styles.subtitleMobile}>Thank you for visiting!</p>
         <div className={styles.flexContainerCta}>
           <div className={styles.img}>
             <img src="/assets/img/illustrations/Messaging.svg" alt="" />
           </div>
           <div className={styles.content}>
+            <p className={styles.subtitle}>Thank you for visiting!</p>
             <p className={styles.text}>
-              Want to discuss business or send me a message?
+              Want to have your very own corner in the internet? Well you're in
+              the right place!
             </p>
             <Button href="/contact" text="get in touch!" />
           </div>
