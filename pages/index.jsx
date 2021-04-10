@@ -129,16 +129,30 @@ export default function Home() {
                 >
                   spaghetti code
                 </a>
-                !
+                ! 🍝
               </span>
             </p>
             <br />
           </div>
           <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Continuous learning and growth</h3>
+            <h3 className={styles.cardTitle}>
+              Website Performance Optimization
+            </h3>
             <p>
-              Keeping up with the latest standards and techniques is a must!
-            </p>{" "}
+              ⌛ Did you know that around <strong>1 in every 2 users </strong>
+              leaves a website if it takes more than <strong>3 seconds </strong>
+              to load?
+              <sup className="reference">
+                <a href="https://www.thinkwithgoogle.com/intl/en-ca/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/">
+                  [2]
+                </a>
+              </sup>{" "}
+              <br />
+              <br />
+              <strong>Optimizing load times</strong> and overall performance is
+              therefore of utmost importance to{" "}
+              <strong>provide the best experience</strong> to users.
+            </p>
             <br />
             <br />
           </div>
