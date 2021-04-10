@@ -25,12 +25,12 @@
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 html {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: #fff;
 }
 
@@ -46,7 +46,7 @@ a {
   transition: color 250ms ease;
 
   &:hover {
-    color: #f0ff68;
+    color: #6effe0;
   }
 }
 
