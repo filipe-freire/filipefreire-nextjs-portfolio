@@ -1,11 +1,15 @@
 import styles from "./Button.module.scss";
 import Link from "next/link";
 
-const Button = ({ href, text, noOpener }) => {
+const Button = ({ href, text, noOpener, blank }) => {
   return (
     <>
       <Link href={href}>
-        <a className={styles.btn} rel={`${(noOpener && "noopener") || ""}`}>
+        <a
+          className={styles.btn}
+          target={`${(blank && "_blank") || ""}`}
+          rel={`${(noOpener && "noopener") || ""}`}
+        >
           {text}
         </a>
       </Link>
