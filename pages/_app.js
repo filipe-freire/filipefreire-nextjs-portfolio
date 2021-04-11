@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 import "../styles/globals.scss";
 import * as gtag from "../lib/gtag";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
