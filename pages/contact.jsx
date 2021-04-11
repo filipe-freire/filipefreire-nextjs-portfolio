@@ -19,7 +19,7 @@ const Contact = () => {
             <h1 className={styles.title}>Reach out! ✉️</h1>
             <div className={styles.messageImgMobile}>
               <Image
-                src="/assets/img/illustrations/Social-Media-Notifications.svg"
+                src="/assets/img/illustrations/Social-Media-Notifications.png"
                 alt="Social Media"
                 width={400}
                 height={300}
@@ -74,7 +74,12 @@ const Contact = () => {
             </ul>
           </div>
           <div className={styles.messageImg}>
-            <img src="/assets/img/illustrations/Social-Media-Notifications.svg" alt="" />
+            <Image
+              src="/assets/img/illustrations/Social-Media-Notifications.png"
+              alt="Social Media"
+              width={400}
+              height={300}
+            />
           </div>
         </div>
       </div>

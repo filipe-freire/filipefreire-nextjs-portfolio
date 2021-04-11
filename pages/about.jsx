@@ -47,7 +47,6 @@ const About = () => {
             height="30"
             alt=""
           />
-
           <h1 className={styles.title}>{helloWorldInstances[count].text}</h1>
         </div>
 
