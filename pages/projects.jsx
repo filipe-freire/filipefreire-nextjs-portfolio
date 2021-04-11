@@ -18,7 +18,7 @@ const projectsArr = [
   {
     title: "BandTracker",
     description: [
-      `- Allows the user to search for his favorite bands/artists and
+      `- Allows the user to search for bands/artists and
     check whether they're performing and where. Built using NodeJS,
     ExpressJS, Handlebars and API integrations.`,
     ],
