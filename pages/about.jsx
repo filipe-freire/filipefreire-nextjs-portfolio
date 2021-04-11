@@ -99,6 +99,7 @@ const About = () => {
         <div className={styles.tools}>
           {tools.map((tool, i) => (
             <Image
+              key={i}
               className={styles.tool}
               src={tool.imgSrc}
               alt={tool.name}
