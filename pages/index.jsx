@@ -1,5 +1,4 @@
 import HeadComp from "../components/HeadComp";
-import { motion } from "framer-motion";
 import Button from "../components/Button/Button";
 import Image from "next/image";
 
@@ -15,26 +14,7 @@ export default function Home() {
         ></meta>
       </HeadComp>
       <h1 className="hidden">Filipe Freire - Homepage</h1>
-      <motion.div
-        key="homepage"
-        className={styles.intro}
-        initial="hidden"
-        animate="visible"
-        exit={{ opacity: 0 }}
-        variants={{
-          hidden: {
-            scale: 0.8,
-            opacity: 0,
-          },
-          visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-              delay: 0.2,
-            },
-          },
-        }}
-      >
+      <div className={styles.intro}>
         <div className={styles.img}>
           <Image
             src="/assets/img/illustrations/Work-from-home.png"
@@ -43,24 +23,7 @@ export default function Home() {
             height={240}
           />
         </div>
-        <motion.div
-          className={styles.container}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.8,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 0.2,
-              },
-            },
-          }}
-        >
+        <div className={styles.container}>
           <p className={styles.introText}>
             Hey there!{" "}
             <span role="img" aria-label="">
@@ -71,57 +34,20 @@ export default function Home() {
             I'm a<span className={styles.accent}> Web Developer!</span>
           </p>
           {/* <p>Welcome to my spot in the Internet!</p> */}
-        </motion.div>
-      </motion.div>
-      <motion.div className={styles.servicesContainer}>
-        <motion.h2
-          className={styles.subTitle}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.8,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 0.2,
-              },
-            },
-          }}
-        >
-          Services
-        </motion.h2>
-        <motion.div
-          className={styles.flexContainer}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.8,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 0.2,
-              },
-            },
-          }}
-        >
+        </div>
+      </div>
+      <div className={styles.servicesContainer}>
+        <h2 className={styles.subTitle}>Services</h2>
+        <div className={styles.flexContainer}>
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Responsive Web Design</h3>
             <p>
               Implementing web designs which render well on
-              <strong> multiple devices </strong>and screen sizes, assuring
-              their quality <strong>no matter where they're viewed.</strong>{" "}
+              <strong> multiple devices </strong>and screen sizes, assuring their quality{" "}
+              <strong>no matter where they're viewed.</strong> <br />
               <br />
-              <br />
-              Did you know <strong>50% of worldwide internet</strong> usage
-              takes place on <strong>mobile devices</strong>?
+              Did you know <strong>50% of worldwide internet</strong> usage takes place on{" "}
+              <strong>mobile devices</strong>?
               <sup className="reference">
                 <a
                   href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/mobile-world/"
@@ -133,17 +59,14 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-              Quality Front-End & Backend code
-            </h3>
+            <h3 className={styles.cardTitle}>Quality Front-End & Backend code</h3>
             <p>
               Managing the prospect of increased demand is no easy task.
               <br />
               <br />
               <strong>Enforcing best practices </strong>
-              regarding data structures, <strong>code readability</strong> and
-              the use of <strong>relevant frameworks</strong> prevents code debt
-              in the long run.
+              regarding data structures, <strong>code readability</strong> and the use of{" "}
+              <strong>relevant frameworks</strong> prevents code debt in the long run.
             </p>
             <br />
             <p>
@@ -163,9 +86,7 @@ export default function Home() {
             <br />
           </div>
           <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-              Website Performance Optimization
-            </h3>
+            <h3 className={styles.cardTitle}>Website Performance Optimization</h3>
             <p>
               ⌛ Did you know that around <strong>1 in every 2 users </strong>
               leaves a website if it takes more than <strong>3 seconds </strong>
@@ -177,31 +98,24 @@ export default function Home() {
               </sup>{" "}
               <br />
               <br />
-              <strong>Optimizing load times</strong> and overall performance is
-              therefore of utmost importance to{" "}
-              <strong>provide the best experience</strong> to users.
+              <strong>Optimizing load times</strong> and overall performance is therefore of utmost
+              importance to <strong>provide the best experience</strong> to users.
             </p>
             <br />
             <br />
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
       <div className={styles.contactCta}>
         <p className={styles.subtitleMobile}>Thank you for visiting!</p>
         <div className={styles.flexContainerCta}>
           <div className={styles.img}>
-            <Image
-              src="/assets/img/illustrations/Messaging.svg"
-              alt=""
-              width={300}
-              height={250}
-            />
+            <Image src="/assets/img/illustrations/Messaging.svg" alt="" width={300} height={250} />
           </div>
           <div className={styles.content}>
             <p className={styles.subtitle}>Thank you for visiting!</p>
             <p className={styles.text}>
-              Want to have your very own corner in the internet? Well you're in
-              the right place!
+              Want to have your very own corner in the internet? Well you're in the right place!
             </p>
             <Button href="/contact" text="get in touch!" />
           </div>
