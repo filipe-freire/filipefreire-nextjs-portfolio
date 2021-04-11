@@ -8,7 +8,12 @@ import styles from "../styles/Homepage.module.scss";
 export default function Home() {
   return (
     <>
-      <HeadComp title="Home"></HeadComp>
+      <HeadComp title="Home">
+        <meta
+          name="Description"
+          content="My portfolio page on web development. Here you'll find info about me, what I do and a couple of projects I have developed."
+        ></meta>
+      </HeadComp>
       <h1 className="hidden">Filipe Freire - Homepage</h1>
       <motion.div
         className={styles.intro}
