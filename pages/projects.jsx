@@ -118,13 +118,20 @@ const Projects = () => {
                 <h1 className={styles.projectTitle}>{projectsArr[count].title}</h1>
               </a>
             </div>
+            <video
+              key={projectsArr[count].title}
+              autoPlay
+              muted
+              className="video"
+              width="420"
+              height="240"
+              controls
+            >
+              <source src={projectsArr[count].video} type="video/webm"></source>
+              Your browser does not support the video tag.
+            </video>
 
-            <div className={styles.projectImg}>
-              <video autoPlay muted className="video" width="420" height="240" controls>
-                <source src={projectsArr[count].video} type="video/webm"></source>
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <div className={styles.projectImg}></div>
 
             <h2 className={styles.summary}>Summary</h2>
             {projectsArr[count].description.map((p, i) => (
