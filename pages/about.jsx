@@ -4,12 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 
 const helloWorldInstances = [
-  "🇵🇹 Olá Mundo!",
-  "🇬🇧 Hello World!",
-  "🇪🇸 Hola Mundo!",
-  "🇸🇪 Hej världen!",
-  "🇩🇪 Hallo Welt!",
-  "🇷🇺 Привет мир!"
+  { src: "/assets/flags/pt.png", text: "Olá Mundo!" },
+  { src: "/assets/flags/gb.png", text: "Hello World!" },
+  { src: "/assets/flags/es.png", text: "Hola Mundo!" },
+  { src: "/assets/flags/se.png", text: "Hej världen!" },
+  { src: "/assets/flags/de.png", text: "Hallo Welt!" },
+  { src: "/assets/flags/ru.png", text: "Привет мир!" }
 ];
 
 const tools = [
@@ -36,9 +36,20 @@ const About = () => {
     <>
       <HeadComp title="About"></HeadComp>
       <div className={styles.container}>
-        <h1 className={styles.title} onLoad={changeLang()}>
-          {helloWorldInstances[count]}
-        </h1>
+        <div className={styles.titleContainer}>
+          <img
+            className={styles.flagImg}
+            src={helloWorldInstances[count].src}
+            width="40"
+            height="30"
+            alt=""
+          />
+
+          <h1 className={styles.title} onLoad={changeLang()}>
+            {helloWorldInstances[count].text}
+          </h1>
+        </div>
+
         <div className={styles.flexContainer}>
           <div className={styles.aboutContainer}>
             <Image

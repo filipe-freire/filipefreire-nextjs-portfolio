@@ -74,7 +74,7 @@ const Projects = () => {
             id="btnLeft"
             onClick={e => handleClick(e)}
             className={styles.btn}
-            tabindex="0"
+            tabIndex="0"
             aria-label="Previous Project"
           >
             <Image src="/assets/img/arrow.svg" alt="" width={35} height={35} />
@@ -99,7 +99,7 @@ const Projects = () => {
             id="btnRight"
             onClick={e => handleClick(e)}
             className={`${styles.btn} ${styles.right}`}
-            tabindex="0"
+            tabIndex="0"
             aria-label="Next Project"
           >
             <Image src="/assets/img/arrow.svg" alt="" width={35} height={35} />
@@ -120,7 +120,7 @@ const Projects = () => {
             </div>
             <video
               key={projectsArr[count].title}
-              autoPlay
+              // autoPlay
               muted
               className="video"
               width="420"
