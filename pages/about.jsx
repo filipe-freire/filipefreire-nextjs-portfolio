@@ -1,6 +1,6 @@
 import HeadComp from "../components/HeadComp";
 import styles from "../styles/About.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const helloWorldInstances = [
@@ -26,11 +26,14 @@ const tools = [
 const About = () => {
   const [count, setCount] = useState(0);
 
-  function changeLang() {
-    setTimeout(() => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
       return count === helloWorldInstances.length - 1 ? setCount(0) : setCount(count + 1);
     }, 3000);
-  }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [count]);
 
   return (
     <>
@@ -45,9 +48,7 @@ const About = () => {
             alt=""
           />
 
-          <h1 className={styles.title} onLoad={changeLang()}>
-            {helloWorldInstances[count].text}
-          </h1>
+          <h1 className={styles.title}>{helloWorldInstances[count].text}</h1>
         </div>
 
         <div className={styles.flexContainer}>
