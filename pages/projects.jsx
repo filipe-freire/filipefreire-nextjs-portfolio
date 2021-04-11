@@ -146,7 +146,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        <Button href={projectsArr[count].link} text="See it live!" />
+        <Button href={projectsArr[count].link} text="See it live!" noOpener />
       </div>
     </>
   );
