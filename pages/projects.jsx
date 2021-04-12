@@ -46,14 +46,11 @@ const projectsArr = [
 
 const Projects = () => {
   const [count, setCount] = useState(0);
-  const [cardPosition, setcardPosition] = useState(250);
 
   function handleClick(e) {
     if (e.currentTarget.id === "btnLeft") {
-      setcardPosition(-250);
       return !count ? setCount(projectsArr.length - 1) : setCount(count - 1);
     } else {
-      setcardPosition(250);
       return count === projectsArr.length - 1
         ? setCount(0)
         : setCount(count + 1);
